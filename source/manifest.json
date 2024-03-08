@@ -1,13 +1,14 @@
 {
-	"name": "Awesome Extension",
+	"$schema": "https://json.schemastore.org/chrome-manifest",
+	"name": "Digitalocean Menu Sorter Extension",
 	"version": "0.0.0",
-	"description": "An awesome new browser extension",
-	"homepage_url": "https://github.com/fregante/browser-extension-template",
-	"manifest_version": 3,
+	"description": "Sort the sidebar side menu so its easier to find things",
+	"homepage_url": "https://github.com/halkeye/extension-digitalocean-menu-sorter",
+	"manifest_version": 2,
 	"minimum_chrome_version": "100",
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "awesome-extension@notlmn.github.io",
+			"id": "do-menu-sorter@halkeye.github.io",
 			"strict_min_version": "100.0"
 		}
 	},
@@ -18,21 +19,27 @@
 		"storage"
 	],
 	"host_permissions": [
-		"https://github.com/*"
+		"https://cloud.digitalocean.com/*"
 	],
 	"content_scripts": [
 		{
-			"matches": [ "https://github.com/fregante/browser-extension-template/*" ],
-			"js": [ "content.js" ],
-			"css": [ "content.css" ],
-			"run_at": "document_end"
+			"matches": [
+				"https://cloud.digitalocean.com/*"
+			],
+			"js": [
+				"content.js"
+			],
+			"css": [
+				"content.css"
+			],
+			"run_at": "document_start"
 		}
 	],
 	"options_ui": {
 		"browser_style": true,
 		"page": "options.html"
 	},
-	"background": {
+	"1background": {
 		"service_worker": "background.js",
 		"type": "module"
 	}

@@ -1,6 +1,6 @@
 env:
   DIRECTORY: distribution
-  PROJECT_NAME: extension
+  PROJECT_NAME: digitalocean-menu-sorter
 
 # FILE GENERATED WITH: npx ghat fregante/ghatemplates/webext
 # SOURCE: https://github.com/fregante/ghatemplates
@@ -42,7 +42,7 @@ jobs:
           zip -r "$FILENAME" ./*
           gh release create "$DAILY_VERSION" --generate-notes "$FILENAME"
   Chrome:
-    if: needs.Version.outputs.created
+    if: needs.Version.outputs.created && false
     needs: Version
     name: Submit (Chrome)
     environment: Chrome
