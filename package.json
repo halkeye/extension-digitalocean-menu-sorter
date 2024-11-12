@@ -37,7 +37,7 @@
 		"eslint-plugin-promise": "^6.1.1",
 		"npm-run-all2": "^5.0.0",
 		"parcel": "^2.10.3",
-		"stylelint": "^15.11.0",
+		"stylelint": "^16.0.0",
 		"stylelint-config-prettier": "^9.0.5"
 	},
 	"targets": {
